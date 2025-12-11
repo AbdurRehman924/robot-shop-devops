@@ -1,7 +1,18 @@
+terraform {
+  required_providers {
+    digitalocean = {
+      source = "digitalocean/digitalocean"
+    }
+    local = {
+      source = "hashicorp/local"
+    }
+  }
+}
+
 resource "digitalocean_kubernetes_cluster" "cluster" {
   name    = var.cluster_name
   region  = var.region
-  version = "1.28.2-do.0"
+  version = "1.34.1-do.1"
 
   node_pool {
     name       = "worker-pool"

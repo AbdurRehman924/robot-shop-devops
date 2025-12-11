@@ -1,3 +1,11 @@
+terraform {
+  required_providers {
+    digitalocean = {
+      source = "digitalocean/digitalocean"
+    }
+  }
+}
+
 resource "digitalocean_loadbalancer" "lb" {
   name   = var.lb_name
   region = var.region
@@ -6,13 +14,6 @@ resource "digitalocean_loadbalancer" "lb" {
   forwarding_rule {
     entry_protocol  = "http"
     entry_port      = 80
-    target_protocol = "http"
-    target_port     = 80
-  }
-
-  forwarding_rule {
-    entry_protocol  = "https"
-    entry_port      = 443
     target_protocol = "http"
     target_port     = 80
   }
