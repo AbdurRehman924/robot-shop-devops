@@ -1,0 +1,5 @@
+do_token = "your_digitalocean_token_here"
+cluster_name = "robot-shop-cluster"
+region = "nyc1"
+registry_name = "robot-shop-registry"
+lb_name = "robot-shop-lb"
